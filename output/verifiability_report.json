@@ -1,0 +1,154 @@
+[
+    {
+        "invoice_number": {
+            "value": "654654",
+            "confidence": 0.01,
+            "verified": false
+        },
+        "invoice_date": {
+            "value": "15-03-2021",
+            "confidence": 0.01,
+            "verified": false
+        },
+        "supplier_gst_number": {
+            "value": "696969696969696",
+            "confidence": 0.01,
+            "verified": false
+        },
+        "bill_to_gst_number": {
+            "value": "696969696969696",
+            "confidence": 0.01,
+            "verified": false
+        },
+        "po_number": {
+            "value": "",
+            "confidence": 0.0,
+            "verified": false
+        },
+        "shipping_address": {
+            "value": "Nazim Khan Nazim Khan Sector-200,Noida, UP Sector-200,Noida; UP Uttar Pradesh (Uttar Pradesh",
+            "confidence": 0.0,
+            "verified": false
+        },
+        "seal_and_sign_present": {
+            "value": false,
+            "confidence": 1.0,
+            "verified": false
+        },
+        "line_items": [
+            {
+                "serial_number": "2",
+                "unit_price": 0.23552,
+                "quantity": 26.0,
+                "total_amount": 0.612352,
+                "verified": false
+            },
+            {
+                "serial_number": "4",
+                "unit_price": 0.215,
+                "quantity": 15.0,
+                "total_amount": 0.3225,
+                "verified": false
+            }
+        ],
+        "total_checks": {
+            "subtotal": 0.0,
+            "discount": 0.0,
+            "gst_amount": 0.0,
+            "expected_final_total": 0.0,
+            "parsed_final_total": 0.0,
+            "formula_verified": false
+        },
+        "fields_flagged_for_review": [
+            "invoice_number",
+            "invoice_date",
+            "supplier_gst_number",
+            "bill_to_gst_number",
+            "po_number",
+            "shipping_address"
+        ]
+    },
+    {
+        "invoice_number": {
+            "value": "",
+            "confidence": 0.0,
+            "verified": false
+        },
+        "invoice_date": {
+            "value": "15-03-2021",
+            "confidence": 0.01,
+            "verified": false
+        },
+        "supplier_gst_number": {
+            "value": "696969696969696",
+            "confidence": 0.01,
+            "verified": false
+        },
+        "bill_to_gst_number": {
+            "value": "696969696969696",
+            "confidence": 0.01,
+            "verified": false
+        },
+        "po_number": {
+            "value": "",
+            "confidence": 0.0,
+            "verified": false
+        },
+        "shipping_address": {
+            "value": "Nazim Khan Nazim Khan Sector-2O0, Noida, U.P. Sector-2O0, Noida, U.P Uttar Pradesh (Uttar Pradesh",
+            "confidence": 0.0,
+            "verified": false
+        },
+        "seal_and_sign_present": {
+            "value": false,
+            "confidence": 1.0,
+            "verified": false
+        },
+        "line_items": [
+            {
+                "serial_number": "12",
+                "unit_price": 235.52,
+                "quantity": 26.0,
+                "total_amount": 0.612352,
+                "verified": false
+            },
+            {
+                "serial_number": "13",
+                "unit_price": 0.658,
+                "quantity": null,
+                "total_amount": 0.1316,
+                "verified": false
+            },
+            {
+                "serial_number": "14",
+                "unit_price": 0.485,
+                "quantity": 50.0,
+                "total_amount": 0.2425,
+                "verified": false
+            },
+            {
+                "serial_number": "15",
+                "unit_price": 0.215,
+                "quantity": 15.0,
+                "total_amount": 0.3225,
+                "verified": false
+            }
+        ],
+        "total_checks": {
+            "subtotal": 0.0,
+            "discount": 0.0,
+            "gst_amount": 0.0,
+            "expected_final_total": 0.0,
+            "parsed_final_total": 0.0,
+            "formula_verified": false
+        },
+        "fields_flagged_for_review": [
+            "invoice_number",
+            "invoice_date",
+            "supplier_gst_number",
+            "bill_to_gst_number",
+            "po_number",
+            "shipping_address"
+        ]
+    }
+]
