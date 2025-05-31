@@ -30,7 +30,6 @@ Invoice-Data-Extraction/
 ├── output/                  # Extracted results: JSON, Excel, cropped seals
 ├── main.py                  # Entry-point script for extraction
 ├── utils/                   # Helper functions and modules
-├── ReadMe.txt               # Initial readme notes
 ├── requirements.txt         # Required Python packages
 └── README.md                # GitHub-friendly README (this file)
 ```
@@ -117,17 +116,4 @@ pip install -r requirements.txt
 - Extract text from the predicted field boxes and map them to structured invoice fields.
 - Use simple regex and cleaning to sanitize values.
 
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests.
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
-## 🙌 Acknowledgements
-
-- [EasyOCR](https://github.com/JaidedAI/EasyOCR)
-- [OpenCV](https://opencv.org/)
-- [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) (for future extensions)
 ````
