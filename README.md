@@ -75,7 +75,7 @@ pip install -r requirements.txt
 
 ## 📊 Sample Output (JSON)
 
-````json
+`````json
 "invoice_number": "654654",
         "invoice_date": "15-03-2021",
         "supplier_gst_number": "696969696969696",
@@ -108,7 +108,7 @@ pip install -r requirements.txt
             "value": false,
             "confidence": 1.0,
             "verified": false
-        }```
+        }````
 
 ## 📌 Future Improvements
 
@@ -116,4 +116,4 @@ pip install -r requirements.txt
 - Extract text from the predicted field boxes and map them to structured invoice fields.
 - Use simple regex and cleaning to sanitize values.
 
-````
+`````
