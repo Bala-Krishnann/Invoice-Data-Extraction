@@ -76,38 +76,40 @@ pip install -r requirements.txt
 ## 📊 Sample Output (JSON)
 
 ```json
-"invoice_number": "654654",
-"invoice_date": "15-03-2021",
-"supplier_gst_number": "696969696969696",
-"bill_to_gst_number": "696969696969696",
-"po_number": "",
-"shipping_address": "Nazim Khan Nazim Khan Sector-200,Noida, UP Sector-200,Noida; UP Uttar Pradesh (Uttar Pradesh",
-"items": [
 {
-"serial_number": "2",
-"description": "ITEM NAME 2",
-"hsn_sac": "2541",
-"quantity": "26.0",
-"unit_price": "0.23552",
-"total_amount": "0.612352"
-},
-{
-"serial_number": "4",
-"description": "ITEM NAME 5",
-"hsn_sac": "8151",
-"quantity": "15.0",
-"unit_price": "0.215",
-"total_amount": "0.3225"
-}
-],
-"discount": 0.0,
-"gst": 15.0,
-"final_total": 0.0,
-"subtotal": 0.93,
-"seal_and_sign_present": {
-"value": false,
-"confidence": 1.0,
-"verified": false
+    "invoice_number": "654654",
+    "invoice_date": "15-03-2021",
+    "supplier_gst_number": "696969696969696",
+    "bill_to_gst_number": "696969696969696",
+    "po_number": "",
+    "shipping_address": "Nazim Khan Nazim Khan Sector-200, Noida, UP Sector-200, Noida; UP Uttar Pradesh (Uttar Pradesh",
+    "items": [
+        {
+            "serial_number": "2",
+            "description": "ITEM NAME 2",
+            "hsn_sac": "2541",
+            "quantity": "26.0",
+            "unit_price": "0.23552",
+            "total_amount": "0.612352"
+        },
+        {
+            "serial_number": "4",
+            "description": "ITEM NAME 5",
+            "hsn_sac": "8151",
+            "quantity": "15.0",
+            "unit_price": "0.215",
+            "total_amount": "0.3225"
+        }
+    ],
+    "discount": 0.0,
+    "gst": 15.0,
+    "final_total": 0.0,
+    "subtotal": 0.93,
+    "seal_and_sign_present": {
+        "value": false,
+        "confidence": 1.0,
+        "verified": false
+    }
 }
 ```
 
