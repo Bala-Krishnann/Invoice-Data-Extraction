@@ -38,14 +38,11 @@ def convert_numpy(obj):
     else:
         return str(obj)
 
-def clean_currency(value):
-    return re.sub(r"[^\d.]", "", value).strip()
-
 def is_valid_item(row):
     if any(k.startswith("col_") for k in row.keys()):
         return False
     fields = ["description", "hsn_sac", "quantity", "unit_price", "total_amount"]
-    non_empty = sum(1 for f in fields if row.get(f, "").strip() not in ["", "DESCRIPTION", "HSN NO_", "QTY", "QTY.", "RATE", "AMOUNT"])
+    non_empty = sum(1 for f in fields if row.get(f, "").strip() not in ["", "DESCRIPTION", "HSN NO_", "QTY", "RATE", "AMOUNT"])
     return non_empty >= 3
 
 def clean_items(items):
@@ -56,8 +53,9 @@ def clean_items(items):
         if any(isinstance(v, str) and v.strip() for v in item.values()):
             if is_valid_item(item):
                 item["serial_number"] = str(i + 1)
-                item["unit_price"] = clean_currency(item.get("unit_price", ""))
-                item["total_amount"] = clean_currency(item.get("total_amount", ""))
+                item["unit_price"] = str(try_float(item.get("unit_price", "")) or "")
+                item["total_amount"] = str(try_float(item.get("total_amount", "")) or "")
+                item["quantity"] = str(try_float(item.get("quantity", "")) or "")
                 for k in item:
                     if isinstance(item[k], str):
                         item[k] = item[k].strip()
@@ -65,27 +63,23 @@ def clean_items(items):
     return cleaned
 
 def extract_financials_from_text(text_blocks):
-    text = " ".join([block["text"] for block in text_blocks])
-    text = text.replace(",", "")
-
+    text = " ".join([block["text"] for block in text_blocks]).replace(",", "")
+    
     def extract_value(pattern):
         match = re.search(pattern, text, flags=re.IGNORECASE)
         if match:
             return try_float(match.group(1))
         return None
 
-    discount = extract_value(r"Discount\s*[:\-]?\s*₹?\s*([\d.]+)")
-    gst_cgst = extract_value(r"CGST\s*(?:@[\d%]+)?\s*[:\-]?\s*₹?\s*([\d.]+)")
-    gst_sgst = extract_value(r"SGST\s*(?:@[\d%]+)?\s*[:\-]?\s*₹?\s*([\d.]+)")
-    gst_igst = extract_value(r"IGST\s*(?:@[\d%]+)?\s*[:\-]?\s*₹?\s*([\d.]+)")
-    total = extract_value(r"(?:Total Amount|Grand Total|Payable Amount)\s*[:\-]?\s*₹?\s*([\d.]+)")
-
-    gst_total = sum(filter(None, [gst_cgst, gst_sgst, gst_igst]))
+    discount = extract_value(r"Discount\s*[:\-]?\s*\₹?\s*([\d.]+)")
+    gst_values = re.findall(r"(?:CGST|SGST|IGST)[^\d]*([\d.]+)", text, flags=re.IGNORECASE)
+    gst_total = sum([try_float(g) for g in gst_values if try_float(g)])
+    final_total = extract_value(r"(?:Total Amount|Grand Total|Payable Amount)\s*[:\-]?\s*\₹?\s*([\d.]+)")
 
     return {
         "discount": discount or 0.0,
         "gst": gst_total or 0.0,
-        "final_total": total or 0.0
+        "final_total": final_total or 0.0
     }
 
 for idx, file in enumerate(os.listdir(input_dir)):

@@ -54,8 +54,8 @@
         "total_checks": {
             "subtotal": 0.0,
             "discount": 0.0,
-            "gst_amount": 0.0,
-            "expected_final_total": 0.0,
+            "gst_amount": 15.0,
+            "expected_final_total": 15.0,
             "parsed_final_total": 0.0,
             "formula_verified": false
         },
@@ -137,8 +137,8 @@
         "total_checks": {
             "subtotal": 0.0,
             "discount": 0.0,
-            "gst_amount": 0.0,
-            "expected_final_total": 0.0,
+            "gst_amount": 15.0,
+            "expected_final_total": 15.0,
             "parsed_final_total": 0.0,
             "formula_verified": false
         },
